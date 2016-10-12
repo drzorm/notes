@@ -1,6 +1,6 @@
 # css常用代码片段
 
-1.锯齿边框
+#### 锯齿边框
 ```css
 .border-sawtooth {
     position: relative;
@@ -27,7 +27,7 @@
 }
 ```
 
-2.多行超出隐藏
+#### 多行超出隐藏
 ```css
 .line-clamp-2{
     word-break: break-all;
@@ -39,7 +39,7 @@
 }
 ```
 
-3.单行超出隐藏
+#### 单行超出隐藏
 ```css
 .text-ellipsis{
     white-space: nowrap;
@@ -48,7 +48,7 @@
 }
 ```
 
-4.半个像素的边框
+#### 半个像素的边框
 ```css
 .s-border-bottom {
     position: relative;
@@ -71,10 +71,53 @@
 }
 ```
 
-5.css过度
+#### css过度
 ```css
 .transition {
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
+}
+```
+#### flex
+```css
+.flex-box {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-box .item {
+  position: relative;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-size: 0.7rem;
+}
+```
+#### 设置滚动条样式
+```
+/* 设置滚动条的样式 */
+.ibox-content::-webkit-scrollbar {
+    width: 6px;
+}
+/* 滚动槽 */
+.ibox-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+/* 滚动条滑块 */
+.ibox-content::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #c0becc;
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+}
+.ibox-content::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,0.4);
 }
 ```
