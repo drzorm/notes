@@ -1,6 +1,6 @@
 # js常用代码片段
 
-1.代码模块化
+#### 代码模块化
 ``` js
 // exports
 if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
@@ -31,7 +31,7 @@ if (typeof define === 'function' && define.amd) {
 }
  ```
 
-2.简单自适应
+#### 简单自适应
 ```js
 function resize() {
     var deviceWidth = document.documentElement.clientWidth;
@@ -43,7 +43,7 @@ window.addEventListener('resize',resize);
 resize();
 ```
 
-3.解决输入法挡住输入框的 bug
+#### 解决输入法挡住输入框的 bug
 ```js
 $(document).on('focus', 'input,textarea', function () {
     window.setTimeout(function () {
