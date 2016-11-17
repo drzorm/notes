@@ -5,8 +5,8 @@
 .border-sawtooth {
     position: relative;
 }
-.border-sawtooth:before,
-.border-sawtooth:after {
+.border-sawtooth::before,
+.border-sawtooth::after {
     content: '';
     position: absolute;
     top: 0;
@@ -15,15 +15,85 @@
     background-size: 8px 10px;
     background-repeat: repeat;
 }
-.border-sawtooth:before {
+.border-sawtooth::before {
     left: 0;
     background-image: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 3px, #ebebeb 3px);
     background-position: 0 -3px;
     }
-    .border-sawtooth:after {
+    .border-sawtooth::after {
     right: 0;
     background-image: radial-gradient( #ebebeb 3px, rgba(0, 0, 0, 0) 3px, rgba(0, 0, 0, 0) 0);
     background-position: 0 1px;
+}
+```
+#### 锯齿底框
+```css
+.border-sawtooth-bottom {
+    position: relative;
+    background-color: #fff;
+}
+
+.border-sawtooth-bottom:::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: 20px;
+    background-size: 20px 50px;
+    background-color: transparent;
+    background-position: 0 0;
+    background-image: linear-gradient(-45deg, #fff 25%, transparent 25%, transparent), linear-gradient(-135deg, #fff 25%, transparent 25%, transparent), linear-gradient(-45deg, transparent 75%, #fff 75%), linear-gradient(-135deg, transparent 75%, #fff 75%);
+}
+```
+#### 波浪线
+```css
+.border-wave {
+    position: relative;
+}
+
+.border-wave::before,
+.border-wave::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-size: 8px 8px;
+    background-repeat: repeat;
+}
+
+.border-wave::before {
+    left: -4px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 3px, #f00 4px, #fff 5px);
+    background-position: 0 0;
+}
+
+.border-wave::after {
+    right: -4px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 3px, #f00 4px, #fff 5px);
+    background-position: -4px 0;
+}
+```
+
+#### 虚线边框
+```css
+.border-dotted {
+    position: relative;
+}
+.border-dotted::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-size: 6px 8px;
+    background-repeat: repeat;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 3px, #ccc 1px);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
 }
 ```
 
@@ -54,7 +124,7 @@
     position: relative;
     margin-bottom: 0.5px;
 }
-.s-border-bottom:after {
+.s-border-bottom::after {
     content: '';
     position: absolute;
     left: 0;
@@ -101,7 +171,7 @@
 }
 ```
 #### 设置滚动条样式
-```
+```css
 /* 设置滚动条的样式 */
 .ibox-content::-webkit-scrollbar {
     width: 6px;
@@ -120,4 +190,16 @@
 .ibox-content::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(255,0,0,0.4);
 }
+```
+#### 滚动回弹效果
+```css
+-webkit-overflow-scrolling: touch; /* 当手指从触摸屏上移开，会保持一段时间的滚动 */
+-webkit-overflow-scrolling: auto; /* 当手指从触摸屏上移开，滚动会立即停止 */
+```
+#### 禁止复制
+```css
+-ms-user-select: none;
+-khtml-user-select: none;
+-webkit-user-select: none;
+user-select: none;
 ```

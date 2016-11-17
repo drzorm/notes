@@ -9,7 +9,7 @@ if (typeof define === 'function' && typeof define.amd === 'object' && define.amd
       return QRCode;
     });
 } else if (typeof define === 'function' && typeof define.cmd === 'object' && define.cmd) {
-    // AMD. Register as an anonymous module.
+    // CMD. Register as an anonymous module.
     define(function() {
       return QRCode;
     });
@@ -41,6 +41,25 @@ function resize() {
 }
 window.addEventListener('resize',resize);
 resize();
+
+// pigcms
+(function (doc, win) {
+  var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if(clientWidth>640){
+        clientWidth=640;
+      }
+      if (!clientWidth) return;
+      docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+    };
+
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+
 ```
 
 #### 解决输入法挡住输入框的 bug
