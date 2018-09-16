@@ -1,0 +1,31 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "notes",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "vuepress": "^0.14.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drzorm/notes.git"
+  },
+  "keywords": [
+    "notes"
+  ],
+  "author": "drzorm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drzorm/notes/issues"
+  },
+  "homepage": "https://github.com/drzorm/notes#readme"
+}
